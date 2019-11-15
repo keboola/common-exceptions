@@ -1,15 +1,18 @@
 sudo: required
 
-language: bash
+language: php
+php:
+  - '7.2'
+  - '7.3'
+  - '7.4snapshot'
 
-services:
-  - docker
-
-before_script:
-  - export APP_IMAGE=common-exceptions
-  - docker -v
-  - docker build -t $APP_IMAGE .
-  - docker run $APP_IMAGE composer ci
+matrix:
+  allow_failures:
+    - php: nightly
 
 script:
-  - skip
+  - composer install
+  - composer ci
+
+notifications:
+  email: false
