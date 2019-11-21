@@ -1,20 +1,22 @@
-# my-component
+# common-exceptions
 
-[![Build Status](https://travis-ci.com/keboola/my-component.svg?branch=master)](https://travis-ci.com/keboola/my-component)
+[![Build Status](https://travis-ci.com/keboola/common-exceptions.svg?branch=master)](https://travis-ci.com/keboola/common-exceptions)
 
-> Fill in description
+> This package provides common exception interfaces to be shared between different Keboola systems.
 
 # Usage
 
-> fill in usage instructions
+> In your library or application implement `UserExceptionInterface` for exceptions that are caused by user's error. That usually means validation failures, HTTP404s, HTTP403s, etc. Anything where user can take any step to fix it. 
+>
+> Also there is `ApplicationExceptionInterface` for the other thing - where you want to explicitly state that the exception is NOT user error.  
 
 ## Development
  
 Clone this repository and init the workspace with following command:
 
 ```
-git clone https://github.com/keboola/my-component
-cd my-component
+git clone https://github.com/keboola/common-exceptions
+cd common-exceptions
 docker-compose build
 docker-compose run --rm dev composer install --no-scripts
 ```
