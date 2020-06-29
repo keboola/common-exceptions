@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Keboola\CommonExceptions;
 
-interface UserExceptionWithContextInterface extends UserExceptionInterface
+use Throwable;
+
+interface ExceptionWithContextInterface extends Throwable
 {
     public function getContext(): array;
 }
