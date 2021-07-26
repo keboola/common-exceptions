@@ -8,5 +8,8 @@ use Throwable;
 
 interface ExceptionWithContextInterface extends Throwable
 {
+    /**
+     * @return array<mixed>
+     */
     public function getContext(): array;
 }

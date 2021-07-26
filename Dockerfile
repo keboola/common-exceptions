@@ -1,4 +1,4 @@
-FROM php:7-cli
+FROM php:8-cli
 
 ARG COMPOSER_FLAGS="--prefer-dist --no-interaction"
 ARG DEBIAN_FRONTEND=noninteractive
@@ -18,8 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& sed -i 's/^# *\(en_US.UTF-8\)/\1/' /etc/locale.gen \
 	&& locale-gen \
 	&& chmod +x /tmp/composer-install.sh \
-	&& /tmp/composer-install.sh \
-	&& composer global require hirak/prestissimo
+	&& /tmp/composer-install.sh
 
 ENV LANGUAGE=en_US.UTF-8
 ENV LANG=en_US.UTF-8
