@@ -1,4 +1,5 @@
-FROM php:8-cli
+ARG PHP_VERSION=8
+FROM php:${PHP_VERSION}-cli
 
 ARG COMPOSER_FLAGS="--prefer-dist --no-interaction"
 ARG DEBIAN_FRONTEND=noninteractive
