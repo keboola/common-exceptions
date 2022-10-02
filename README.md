@@ -1,7 +1,5 @@
 # common-exceptions
 
-[![Build Status](https://travis-ci.com/keboola/common-exceptions.svg?branch=master)](https://travis-ci.com/keboola/common-exceptions)
-
 > This package provides common exception interfaces to be shared between different Keboola systems.
 
 # Usage
